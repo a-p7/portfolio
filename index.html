@@ -5,16 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Main Page</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style for the toggle button */
+        #darkModeToggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #000;  /* Black background for the button */
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: background-color 0.3s;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #000;  /* Entire page background set to black */
+            color: white;
+        }
+
+        header.dark-mode {
+            background-color: #000;  /* Header background set to black */
+        }
+
+        nav.dark-mode {
+            background-color: #000;  /* Navigation bar background set to black */
+        }
+
+        section.dark-mode {
+            background-color: #000;  /* Section background set to black */
+        }
+
+        footer.dark-mode {
+            background-color: #000;  /* Footer background set to black */
+        }
+
+        /* Icons */
+        #moonIcon, #sunIcon {
+            display: none;
+            font-size: 30px;
+        }
+
+        /* Display Moon icon for dark mode */
+        body.dark-mode #moonIcon {
+            display: block;
+            color: white;  /* Moon icon color set to white */
+        }
+
+        /* Display Sun icon for light mode */
+        body:not(.dark-mode) #sunIcon {
+            display: block;
+            color: yellow;  /* Sun icon color set to yellow */
+        }
+
+        /* Ensure button stays centered */
+        #darkModeToggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Aashish</h1>
-        <button id="darkModeToggle" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer;">
-            Toggle Dark Mode
-        </button>
     </header>
     
-
+    <!-- Dark Mode Toggle Button -->
+    <button id="darkModeToggle">
+        <!-- Moon and Sun icons (text-based) -->
+        <span id="moonIcon">🌙</span>  <!-- Moon icon for dark mode -->
+        <span id="sunIcon">🌕</span>   <!-- Sun icon for light mode -->
+    </button>
 
     <nav>
         <a href="#home">Home</a>
@@ -52,6 +120,7 @@
     <footer>
         <p>&copy; 2024 Aashish. All Rights Reserved.</p>
     </footer>
+
     <script>
         const toggleButton = document.getElementById('darkModeToggle');
         const body = document.body;
@@ -68,6 +137,5 @@
             footer.classList.toggle('dark-mode');
         });
     </script>
-    
 </body>
 </html>
