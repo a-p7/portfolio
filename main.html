@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Main Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Aashish</h1>
+        <button id="darkModeToggle" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Toggle Dark Mode
+        </button>
+    </header>
+    
+
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to the official website of Aashish. Explore and discover more about us!</p>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>We are passionate about delivering excellence and value to our clients. Our mission is to create impactful solutions.</p>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <p>Our services are tailored to meet the needs of our diverse clientele. Let us help you achieve your goals.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Our portfolio showcases our expertise and commitment to quality. Check out some of our proud accomplishments.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Have any questions? Feel free to reach out to us and we will get back to you as soon as possible.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aashish. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const header = document.querySelector('header');
+        const nav = document.querySelector('nav');
+        const sections = document.querySelectorAll('section');
+        const footer = document.querySelector('footer');
+    
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            header.classList.toggle('dark-mode');
+            nav.classList.toggle('dark-mode');
+            sections.forEach(section => section.classList.toggle('dark-mode'));
+            footer.classList.toggle('dark-mode');
+        });
+    </script>
+    
+</body>
+</html>
