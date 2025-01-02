@@ -3,138 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Main Page</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Style for the toggle button */
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: #222;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar nav a:hover {
+            color: #FFD700;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .hero-text {
+            max-width: 60%;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.8rem;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .hero-text button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero-text button:hover {
+            background-color: #0056b3;
+        }
+
+        .hero-image img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Dark Mode Button */
         #darkModeToggle {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 20px;
+            right: 20px;
             width: 50px;
             height: 50px;
-            background-color: #000;  /* Black background for the button */
+            background-color: #222;
             border: none;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            transition: background-color 0.3s;
-        }
-
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #000;  /* Entire page background set to black */
             color: white;
-        }
-
-        header.dark-mode {
-            background-color: #000;  /* Header background set to black */
-        }
-
-        nav.dark-mode {
-            background-color: #000;  /* Navigation bar background set to black */
-        }
-
-        section.dark-mode {
-            background-color: #000;  /* Section background set to black */
-        }
-
-        footer.dark-mode {
-            background-color: #000;  /* Footer background set to black */
-        }
-
-        /* Icons */
-        #moonIcon, #sunIcon {
-            display: none;
-            font-size: 30px;
-        }
-
-        /* Display Moon icon for dark mode */
-        body.dark-mode #moonIcon {
-            display: block;
-            color: white;  /* Moon icon color set to white */
-        }
-
-        /* Display Sun icon for light mode */
-        body:not(.dark-mode) #sunIcon {
-            display: block;
-            color: yellow;  /* Sun icon color set to yellow */
-        }
-
-        /* Ensure button stays centered */
-        #darkModeToggle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Aashish</h1>
-    </header>
-    
-    <!-- Dark Mode Toggle Button -->
-    <button id="darkModeToggle">
-        <!-- Moon and Sun icons (text-based) -->
-        <span id="moonIcon">🌙</span>  <!-- Moon icon for dark mode -->
-        <span id="sunIcon">🌕</span>   <!-- Sun icon for light mode -->
-    </button>
+    <div class="sidebar">
+        <h1>Atlas</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="main-content">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Hello, my name is Aashish</h1>
+                <h2>I'm a Web Developer</h2>
+                <p>
+                    I'm a web designer with extensive experience for over 10 years. My expertise is in creating websites, graphic designs, and much more.
+                </p>
+                <button>Hire Me</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/250" alt="Profile Picture">
+            </div>
+        </div>
+    </div>
 
-    <section id="home">
-        <h2>Home</h2>
-        <p>Welcome to the official website of Aashish. Explore and discover more about us!</p>
-    </section>
-
-    <section id="about">
-        <h2>About</h2>
-        <p>We are passionate about delivering excellence and value to our clients. Our mission is to create impactful solutions.</p>
-    </section>
-
-    <section id="services">
-        <h2>Services</h2>
-        <p>Our services are tailored to meet the needs of our diverse clientele. Let us help you achieve your goals.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Our portfolio showcases our expertise and commitment to quality. Check out some of our proud accomplishments.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Have any questions? Feel free to reach out to us and we will get back to you as soon as possible.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Aashish. All Rights Reserved.</p>
-    </footer>
+    <button id="darkModeToggle">🌙</button>
 
     <script>
         const toggleButton = document.getElementById('darkModeToggle');
         const body = document.body;
-        const header = document.querySelector('header');
-        const nav = document.querySelector('nav');
-        const sections = document.querySelectorAll('section');
-        const footer = document.querySelector('footer');
-    
+
         toggleButton.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            header.classList.toggle('dark-mode');
-            nav.classList.toggle('dark-mode');
-            sections.forEach(section => section.classList.toggle('dark-mode'));
-            footer.classList.toggle('dark-mode');
         });
     </script>
 </body>
