@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         /* General Reset */
         * {
@@ -15,9 +14,38 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
             display: flex;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+            color: #333;
+        }
+
+        body.dark-mode {
+            background: #121212;
+            color: red;
+        }
+
+        header.dark-mode {
+            background: linear-gradient(45deg, #333, #444);
+            color: red;
+        }
+
+        nav.dark-mode {
+            background-color: #444;
+        }
+
+        section.dark-mode {
+            background-color: #222;
+            color: red;
+            box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1);
+        }
+
+        footer.dark-mode {
+            background-color: #111;
+            color: red;
         }
 
         /* Sidebar Styles */
@@ -30,23 +58,30 @@
             flex-direction: column;
             align-items: center;
             padding-top: 20px;
+            position: fixed;
+            left: 0;
         }
 
         .sidebar h1 {
             font-size: 1.8rem;
             margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .sidebar nav {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
+            margin-top: 50px;
         }
 
         .sidebar nav a {
             text-decoration: none;
             color: white;
             font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             transition: color 0.3s;
         }
 
@@ -54,9 +89,18 @@
             color: #FFD700;
         }
 
+        .sidebar nav a i {
+            font-size: 1.5rem;
+        }
+
         /* Main Content Styles */
         .main-content {
+            margin-left: 250px;
             flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
             padding: 20px;
         }
 
@@ -64,14 +108,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px;
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            padding: 40px;
+            width: 80%;
         }
 
         .hero-text {
-            max-width: 60%;
+            max-width: 50%;
         }
 
         .hero-text h1 {
@@ -82,7 +127,7 @@
 
         .hero-text h2 {
             font-size: 1.8rem;
-            color: #007BFF;
+            color: #e63946;
             margin-bottom: 20px;
         }
 
@@ -97,7 +142,7 @@
             padding: 10px 20px;
             font-size: 1rem;
             color: white;
-            background-color: #007BFF;
+            background-color: #e63946;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -105,7 +150,7 @@
         }
 
         .hero-text button:hover {
-            background-color: #0056b3;
+            background-color: #d62828;
         }
 
         .hero-image img {
@@ -116,7 +161,7 @@
 
         /* Dark Mode Button */
         #darkModeToggle {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
             width: 50px;
@@ -137,11 +182,11 @@
     <div class="sidebar">
         <h1>Atlas</h1>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
+            <a href="#home"><i>🏠</i> Home</a>
+            <a href="#about"><i>👤</i> About</a>
+            <a href="#services"><i>💼</i> Services</a>
+            <a href="#portfolio"><i>🖼️</i> Portfolio</a>
+            <a href="#contact"><i>✉️</i> Contact</a>
         </nav>
     </div>
 
@@ -151,7 +196,7 @@
                 <h1>Hello, my name is Aashish</h1>
                 <h2>I'm a Web Developer</h2>
                 <p>
-                    I'm a web designer with extensive experience for over 10 years. My expertise is in creating websites, graphic designs, and much more.
+                    I'm a web designer with extensive experience for over 10 years. My expertise lies in creating websites, graphic designs, and much more.
                 </p>
                 <button>Hire Me</button>
             </div>
